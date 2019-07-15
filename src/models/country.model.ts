@@ -2,7 +2,7 @@ import { Currency } from './currency.model';
 import { Language } from './language.model';
 import { RegionalBlock } from './regional-block.model';
 
-export interface CountryInfo {
+export interface Country {
   alpha2Code: string;
   alpha3Code: string;
   altSpellings: string[];

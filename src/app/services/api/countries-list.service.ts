@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../../environments/environment';
+import { Country } from '../../../models';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,11 @@ export class CountriesListService {
 
   constructor(private http: HttpClient) { }
 
-  getAllCountries(): Observable<any> {
-    return this.http.get<any>(`${environment.baseUrl}/all`);
+  /**
+   * Get the list of all countries
+   * @returns {Observable<Country[]>}
+   */
+  getAllCountries(): Observable<Country[]> {
+    return this.http.get<Country[]>(`${environment.baseUrl}/all`);
   }
 }
