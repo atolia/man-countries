@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { CountriesListService } from '../services/api/countries-list/countries-list.service';
 import { Country } from '../../models';
@@ -10,17 +11,16 @@ import { Country } from '../../models';
 })
 export class CountriesListComponent implements OnInit {
 
-  countries: Country[];
+  countries$: Observable<Country[]>;
 
   constructor(private countriesListService: CountriesListService) { }
 
   ngOnInit() {
-    this.getCountriesList()
+    this.countries$ = this.getCountriesList();
   }
 
   getCountriesList() {
-    this.countriesListService.getAllCountries()
-      .subscribe((countries: Country[]) => this.countries = countries);
+    return this.countriesListService.getAllCountries();
   }
 
 }

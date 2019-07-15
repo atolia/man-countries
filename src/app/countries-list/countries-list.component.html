@@ -1,6 +1,4 @@
-<button (click)="getCountriesList()">Get countries!</button>
-
-<div *ngIf="countries?.length">
+<div *ngIf="(this.countries$ | async) as countries">
   <div *ngFor="let country of countries; let i = index" class="country-row" [routerLink]="['/country', country.name]">
     <span class="count">{{i+1}}</span>
     <span><img src="{{country.flag}}" alt="" class="flag-image"></span>

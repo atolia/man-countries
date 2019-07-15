@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../../../environments/environment';
-// import { Country } from '../../../../models';
+import { Country } from '../../../../models';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,12 @@ export class CountryDetailsService {
 
   constructor(private http: HttpClient) { }
 
-  getCountryDetails(countryName: string): Observable<any> {
-    return this.http.get<any>(`${environment.baseUrl}/name/${countryName}`);
+  /**
+   * Get specific country details
+   * @param {string} countryName
+   * @returns {Observable<Country[]>}
+   */
+  getCountryDetails(countryName: string): Observable<Country[]> {
+    return this.http.get<Country[]>(`${environment.baseUrl}/name/${countryName}`);
   }
 }
