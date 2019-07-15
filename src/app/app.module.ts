@@ -8,6 +8,7 @@ import { CountriesListComponent } from './countries-list/countries-list.componen
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CountryDetailsComponent } from './country-details/country-details.component';
 import { SearchFieldComponent } from './search-field/search-field.component';
+import { SearchByNamePipe } from './pipes/search-by-name/search-by-name.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SearchFieldComponent } from './search-field/search-field.component';
     CountriesListComponent,
     PageNotFoundComponent,
     CountryDetailsComponent,
-    SearchFieldComponent
+    SearchFieldComponent,
+    SearchByNamePipe
   ],
   imports: [
     BrowserModule,

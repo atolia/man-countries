@@ -4,6 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { CountriesListComponent } from './countries-list.component';
 import { SearchFieldComponent } from '../search-field/search-field.component';
+import { SearchByNamePipe } from '../pipes/search-by-name/search-by-name.pipe';
 
 describe('CountriesListComponent', () => {
   let component: CountriesListComponent;
@@ -11,7 +12,7 @@ describe('CountriesListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountriesListComponent, SearchFieldComponent ],
+      declarations: [ CountriesListComponent, SearchFieldComponent, SearchByNamePipe ],
       imports: [ HttpClientTestingModule, RouterTestingModule ]
     })
     .compileComponents();

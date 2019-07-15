@@ -18,8 +18,6 @@ export class CountriesListComponent implements OnInit {
 
   ngOnInit() {
     this.countries$ = this.getCountriesList();
-
-    this.searchService.searchTerms$.subscribe(term => console.log('term', term));
   }
 
   getCountriesList() {
