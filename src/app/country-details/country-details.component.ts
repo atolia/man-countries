@@ -27,6 +27,8 @@ export class CountryDetailsComponent implements OnInit {
       ),
       map((details: Country[]) => details[0])
     );
+
+    // this.countryDetails$.subscribe(d => console.log(d));
   }
 
   goBack() {

@@ -1,4 +1,4 @@
-<button (click)="goBack()" class="back-btn"><- Back</button>
+<button (click)="goBack()" class="back-btn">Back</button>
 
 <div *ngIf="(countryDetails$ | async) as countryDetails">
   <div>
@@ -20,6 +20,13 @@
       <h3>Timezones:</h3>
       <div *ngFor="let timezone of countryDetails.timezones">
         <div>{{timezone}}</div>
+      </div>
+    </div>
+
+    <div>
+      <h3>Borders:</h3>
+      <div *ngFor="let border of countryDetails.borders">
+        <div>{{border}}</div>
       </div>
     </div>
 

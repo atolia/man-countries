@@ -1,0 +1,7 @@
+@mixin flag-size($size){
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: $size;
+  max-height: $size;
+}
