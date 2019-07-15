@@ -1,3 +1,5 @@
+<man-search-field></man-search-field>
+
 <div *ngIf="(countries$ | async) as countries">
   <div *ngFor="let country of countries; let i = index" class="country-row" [routerLink]="['/country', country.name]">
     <span class="count">{{i+1}}</span>

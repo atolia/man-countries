@@ -10,3 +10,9 @@ button {
   color: $white-color;
   cursor: pointer;
 }
+
+input[type="text"] {
+  padding: 5px 2px;
+  font-size: 16px;
+  border-radius: 3px;
+}

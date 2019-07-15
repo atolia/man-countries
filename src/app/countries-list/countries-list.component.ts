@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { CountriesListService } from '../services/api/countries-list/countries-list.service';
+import { SearchService } from '../services/search/search.service';
 import { Country } from '../../models';
 
 @Component({
@@ -13,10 +14,12 @@ export class CountriesListComponent implements OnInit {
 
   countries$: Observable<Country[]>;
 
-  constructor(private countriesListService: CountriesListService) { }
+  constructor(private countriesListService: CountriesListService, public searchService: SearchService) { }
 
   ngOnInit() {
     this.countries$ = this.getCountriesList();
+
+    this.searchService.searchTerms$.subscribe(term => console.log('term', term));
   }
 
   getCountriesList() {

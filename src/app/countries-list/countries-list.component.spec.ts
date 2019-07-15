@@ -3,6 +3,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { CountriesListComponent } from './countries-list.component';
+import { SearchFieldComponent } from '../search-field/search-field.component';
 
 describe('CountriesListComponent', () => {
   let component: CountriesListComponent;
@@ -10,7 +11,7 @@ describe('CountriesListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountriesListComponent ],
+      declarations: [ CountriesListComponent, SearchFieldComponent ],
       imports: [ HttpClientTestingModule, RouterTestingModule ]
     })
     .compileComponents();

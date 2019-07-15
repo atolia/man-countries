@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { CountriesListComponent } from './countries-list/countries-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CountryDetailsComponent } from './country-details/country-details.component';
+import { SearchFieldComponent } from './search-field/search-field.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountriesListComponent,
     PageNotFoundComponent,
-    CountryDetailsComponent
+    CountryDetailsComponent,
+    SearchFieldComponent
   ],
   imports: [
     BrowserModule,
