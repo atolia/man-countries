@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CountriesListComponent } from './countries-list/countries-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CountryDetailsComponent } from './country-details/country-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountriesListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CountryDetailsComponent
   ],
   imports: [
     BrowserModule,
