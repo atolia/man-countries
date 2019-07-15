@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CountriesListService } from '../services/api/countries-list.service';
+import { CountriesListService } from '../services/api/countries-list/countries-list.service';
 import { Country } from '../../models';
 
 @Component({
@@ -15,6 +15,7 @@ export class CountriesListComponent implements OnInit {
   constructor(private countriesListService: CountriesListService) { }
 
   ngOnInit() {
+    this.getCountriesList()
   }
 
   getCountriesList() {

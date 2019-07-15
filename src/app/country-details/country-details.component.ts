@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-
-import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+
+import { CountryDetailsService } from '../services/api/country-details/country-details.service';
 
 @Component({
   selector: 'man-country-details',
@@ -13,13 +13,12 @@ export class CountryDetailsComponent implements OnInit {
 
   countryDetails$: any;
 
-  constructor( private route: ActivatedRoute ) { }
+  constructor( private route: ActivatedRoute, private countryDetailsService: CountryDetailsService ) { }
 
   ngOnInit() {
     this.countryDetails$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => of(params.get('countryName')))
-        // this.service.getCountryDetails(params.get('countryName')))
-    )
+      switchMap((params: ParamMap) => this.countryDetailsService.getCountryDetails(params.get('countryName')))
+    );
 
     this.countryDetails$.subscribe((details: any) => console.log(details));
   }
