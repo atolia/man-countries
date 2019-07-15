@@ -1,9 +1,7 @@
-.flag-image {
-  display: block;
-  max-width: 40px;
-  max-height: 40px;
-  width: auto;
-  height: auto;
+@import "styles";
+
+.flag {
+  @include flag-size(40px)
 }
 
 .country-row {

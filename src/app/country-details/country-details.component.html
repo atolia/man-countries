@@ -1,1 +1,27 @@
-<p>country-details works!</p>
+<button (click)="goBack()" class="back-btn"><- Back</button>
+
+<div *ngIf="(countryDetails$ | async) as countryDetails">
+  <div>
+    <span><img src="{{countryDetails.flag}}" alt="country flag" class="flag"></span>
+
+    <div>
+      <h3>Name:</h3>
+      <div>{{countryDetails.name}}</div>
+    </div>
+
+    <div>
+      <h3>Languages:</h3>
+      <div *ngFor="let language of countryDetails.languages">
+        <div>{{language.name}}</div>
+      </div>
+    </div>
+
+    <div>
+      <h3>Timezones:</h3>
+      <div *ngFor="let timezone of countryDetails.timezones">
+        <div>{{timezone}}</div>
+      </div>
+    </div>
+
+  </div>
+</div>

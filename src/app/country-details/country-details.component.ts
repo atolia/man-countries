@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { switchMap, map } from 'rxjs/operators';
 
 import { CountryDetailsService } from '../services/api/country-details/country-details.service';
+import { Country } from '../../models';
 
 @Component({
   selector: 'man-country-details',
@@ -11,16 +14,23 @@ import { CountryDetailsService } from '../services/api/country-details/country-d
 })
 export class CountryDetailsComponent implements OnInit {
 
-  countryDetails$: any;
+  countryDetails$: Observable<Country>;
 
-  constructor( private route: ActivatedRoute, private countryDetailsService: CountryDetailsService ) { }
+  constructor( private route: ActivatedRoute,
+               private countryDetailsService: CountryDetailsService,
+               private location: Location ) { }
 
   ngOnInit() {
     this.countryDetails$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => this.countryDetailsService.getCountryDetails(params.get('countryName')))
+      switchMap((params: ParamMap) =>
+        this.countryDetailsService.getCountryDetails(params.get('countryName'))
+      ),
+      map((details: Country[]) => details[0])
     );
+  }
 
-    this.countryDetails$.subscribe((details: any) => console.log(details));
+  goBack() {
+    this.location.back();
   }
 
 }

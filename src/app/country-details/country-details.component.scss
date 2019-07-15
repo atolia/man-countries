@@ -1,0 +1,10 @@
+@import "variables";
+@import "styles";
+
+.back-btn {
+  background-color: $man-color;
+}
+
+.flag {
+  @include flag-size(230px);
+}
