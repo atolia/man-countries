@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { CountriesListService } from '../services/api/countries-list.service';
+
 @Component({
   selector: 'man-countries-list',
   templateUrl: './countries-list.component.html',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountriesListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private countriesListService: CountriesListService) { }
 
   ngOnInit() {
+  }
+
+  getCountriesList() {
+    this.countriesListService.getAllCountries().subscribe((data: any) => console.log(data));
   }
 
 }
