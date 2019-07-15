@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { CountriesListComponent } from './countries-list.component';
 
@@ -8,7 +9,8 @@ describe('CountriesListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountriesListComponent ]
+      declarations: [ CountriesListComponent ],
+      imports: [ HttpClientTestingModule]
     })
     .compileComponents();
   }));
