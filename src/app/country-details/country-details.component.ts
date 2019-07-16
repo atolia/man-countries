@@ -18,6 +18,7 @@ export class CountryDetailsComponent implements OnInit {
   countryDetails$: Observable<Country>;
   @ViewChild('mapElement', {static: false}) mapElement: ElementRef;
   map: google.maps.Map;
+  openForm = false;
 
   constructor( private route: ActivatedRoute,
                private countryDetailsService: CountryDetailsService,

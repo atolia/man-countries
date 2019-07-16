@@ -1,0 +1,50 @@
+@import "variables";
+
+:host {
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  z-index: 1;
+}
+
+.form-wrapper {
+  padding: 10px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: $grey-color;
+
+  label {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 3px;
+
+    &:not(first-child) {
+      margin-top: 3px;
+    }
+  }
+}
+
+
+.label-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.close-btn {
+  position: absolute;
+  padding: 0 3px;
+  right: 3px;
+  top: 3px;
+  color: $black-color;
+  background-color: $red-color;
+}
+
+.email {
+  border: 1px solid $black-color;
+}
+
+.submit-btn {
+  margin-top: 5px;
+  background-color: $man-main-color;
+}

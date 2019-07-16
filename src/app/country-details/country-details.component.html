@@ -43,3 +43,7 @@
   </div>
 </div>
 
+<button (click)="openForm = true" class="contact-btn" *ngIf="!openForm">Contact</button>
+
+<man-contact-form *ngIf="openForm" (closeForm)="openForm = $event"></man-contact-form>
+

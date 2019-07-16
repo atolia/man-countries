@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { CountryDetailsComponent } from './country-details.component';
+import { ContactFormComponent } from '../shared/contact-form/contact-form.component';
 
 describe('CountryDetailsComponent', () => {
   let component: CountryDetailsComponent;
@@ -10,7 +11,7 @@ describe('CountryDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountryDetailsComponent ],
+      declarations: [ CountryDetailsComponent, ContactFormComponent ],
       imports: [ RouterTestingModule, HttpClientTestingModule ]
     })
     .compileComponents();
