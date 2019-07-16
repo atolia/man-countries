@@ -15,7 +15,10 @@
       </th>
     </thead>
 
-    <tbody *ngFor="let country of countries | searchByName:(searchService.searchTerms$ | async) | sortByPopulation:sortPopulationOrder | sortByName:sortNamesOrder let i = index"
+    <tbody *ngFor="let country of countries |
+          searchByName:(searchService.searchTerms$ | async) |
+          sortByPopulation:sortPopulationOrder |
+          sortByName:sortNamesOrder let i = index"
           [routerLink]="['/country', country.name]">
       <tr>
         <td class="count-ceil">{{i+1}}</td>
