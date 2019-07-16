@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CountriesListComponent } from './countries-list/countries-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CountryDetailsComponent } from './country-details/country-details.component';
+import { CountriesPageComponent } from './countries-page/countries-page.component';
 
 const routes: Routes = [
   { path: '',
-    component: CountriesListComponent
+    component: CountriesPageComponent
   },
   {
     path: 'country/:countryName',
