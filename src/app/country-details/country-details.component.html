@@ -1,32 +1,39 @@
-<button (click)="goBack()" class="back-btn">Back</button>
+<div *ngIf="(countryDetails$ | async) as countryDetails" class="content-wrapper">
+  <div class="title">
+    <button (click)="goBack()" class="back-btn">Back</button>
+    <span>Details</span>
+  </div>
 
-<div *ngIf="(countryDetails$ | async) as countryDetails">
-  <div>
-    <span><img src="{{countryDetails.flag}}" alt="country flag" class="flag"></span>
-
-    <div>
-      <h3>Name:</h3>
-      <div>{{countryDetails.name}}</div>
+  <div class="details-content">
+    <div class="flag-section">
+      <img src="{{countryDetails.flag}}" alt="country flag" class="flag">
     </div>
 
     <div>
-      <h3>Languages:</h3>
-      <div *ngFor="let language of countryDetails.languages">
-        <div>{{language.name}}</div>
+      <div>
+        <h3>Name:</h3>
+        <div>{{countryDetails.name}}</div>
       </div>
-    </div>
 
-    <div>
-      <h3>Timezones:</h3>
-      <div *ngFor="let timezone of countryDetails.timezones">
-        <div>{{timezone}}</div>
+      <div>
+        <h3>Languages:</h3>
+        <div *ngFor="let language of countryDetails.languages">
+          <div>{{language.name}}</div>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <h3>Borders:</h3>
-      <div *ngFor="let border of countryDetails.borders">
-        <div>{{border}}</div>
+      <div>
+        <h3>Timezones:</h3>
+        <div *ngFor="let timezone of countryDetails.timezones">
+          <div>{{timezone}}</div>
+        </div>
+      </div>
+
+      <div>
+        <h3>Borders:</h3>
+        <div *ngFor="let border of countryDetails.borders">
+          <div>{{border}}</div>
+        </div>
       </div>
     </div>
 

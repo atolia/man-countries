@@ -2,6 +2,16 @@
 @import "variables";
 @import "mixins";
 
+body {
+  font: $man-font;
+  font-weight: $man-font-weight;
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
 button {
   padding: 5px 10px;
   border-radius: 5px;
@@ -20,4 +30,8 @@ input[type="text"] {
   &:focus {
     outline: $blue-color auto 5px;
   }
+}
+
+.content-wrapper {
+  margin: 20px;
 }
