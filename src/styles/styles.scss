@@ -45,6 +45,7 @@ input {
 .sort-icon {
   cursor: pointer;
   user-select: none;
+  color: $blue-color;
 
   &.disabled {
     color: $grey-visible-color;

@@ -22,16 +22,16 @@ export class CountriesListComponent implements OnInit {
     this.countries$ = this.getCountriesList();
   }
 
-  getCountriesList() {
-    return this.countriesListService.getAllCountries();
-  }
-
   sortPopulation() {
     this.sortPopulationOrder = this.sortPopulationOrder === 'asc' ? 'desc' : 'asc';
   }
 
   sortNames() {
     this.sortNamesOrder = this.sortNamesOrder === 'asc' ? 'desc' : 'asc';
+  }
+
+  private getCountriesList() {
+    return this.countriesListService.getAllCountries();
   }
 
 }
