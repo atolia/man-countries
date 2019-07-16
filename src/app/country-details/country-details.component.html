@@ -5,7 +5,7 @@
       <span>Details</span>
     </div>
 
-    <div *ngIf="(countryDetails$ | async) as countryDetails" class="flex-row details-section">
+    <div *ngIf="(countryDetails$ | async) as countryDetails" class="details-section">
       <div class="flag-section">
         <img src="{{countryDetails.flag}}" alt="country flag" class="flag">
       </div>
