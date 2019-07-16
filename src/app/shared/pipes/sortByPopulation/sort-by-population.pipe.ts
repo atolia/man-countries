@@ -15,7 +15,6 @@ export class SortByPopulationPipe implements PipeTransform {
       return countries.sort((a, b) => b.population - a.population);
     }
 
-    console.log('all');
     return countries;
   }
 }
