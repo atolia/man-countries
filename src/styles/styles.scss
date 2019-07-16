@@ -20,6 +20,10 @@ button {
   font-weight: 500;
   color: $white-color;
   cursor: pointer;
+
+  &[disabled] {
+    background-color: $grey-color !important;
+  }
 }
 
 input {

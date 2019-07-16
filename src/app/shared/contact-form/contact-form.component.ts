@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'man-contact-form',
@@ -7,11 +8,16 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class ContactFormComponent implements OnInit {
 
-  @Output() closeForm = new EventEmitter<boolean>()
+  @Output() closeForm = new EventEmitter<boolean>();
+  contactForm: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.contactForm = this.fb.group({
+      email: ['', Validators.compose([Validators.email, Validators.required])],
+      message: ['', Validators.required]
+    });
   }
 
   close() {
@@ -19,7 +25,7 @@ export class ContactFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("Message sent!");
+    console.log('Message sent', this.contactForm.value);
     this.closeForm.emit(false);
   }
 

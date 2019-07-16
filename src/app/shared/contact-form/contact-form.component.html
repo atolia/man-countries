@@ -1,13 +1,13 @@
-<div class="form-wrapper">
+<form class="form-wrapper" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
   <button class="close-btn" (click)="close()">×</button>
   <div class="label-input">
     <label for="">Your email:</label>
-    <input type="email" class="email">
+    <input type="email" class="email" formControlName="email">
   </div>
 
   <div class="label-input">
     <label for="">Your message:</label>
-    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <textarea name="" id="" cols="30" rows="10" formControlName="message"></textarea>
   </div>
-  <button class="submit-btn" (click)="onSubmit()">Submit</button>
-</div>
+  <button class="submit-btn" [disabled]="!contactForm.valid">Submit</button>
+</form>
