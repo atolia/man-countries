@@ -1,0 +1,17 @@
+@mixin flag-size($size){
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: $size;
+  max-height: $size;
+}
+
+@mixin input-height($size){
+  border-radius: $size;
+  height: $size;
+}
+
+@mixin man-background($alpha){
+  background: rgba(255, 146, 10, $alpha);
+}
+

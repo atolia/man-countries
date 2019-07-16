@@ -1,0 +1,34 @@
+<div *ngIf="(countries$ | async) as countries">
+  <table>
+    <thead>
+      <th class="count-ceil">Count</th>
+      <th class="flag-ceil">Flag</th>
+      <th>Name
+        <span class="sort-icon" [class.disabled]="!sortNamesOrder" (click)="sortNames()">
+          {{sortNamesOrder === 'asc' ? '&#8673;' : '&#8675;'}}
+        </span>
+      </th>
+      <th>Population
+        <span class="sort-icon" [class.disabled]="!sortPopulationOrder" (click)="sortPopulation()">
+          {{sortPopulationOrder === 'asc' ? '&#8673;' : '&#8675;'}}
+        </span>
+      </th>
+    </thead>
+
+    <tbody *ngFor="let country of countries |
+          searchByName:(searchService.searchTerms$ | async) |
+          sortByPopulation:sortPopulationOrder |
+          sortByName:sortNamesOrder let i = index"
+          [routerLink]="['/country', country.name]">
+      <tr>
+        <td class="count-ceil">{{i+1}}</td>
+        <td class="flag-ceil">
+          <img src="{{country.flag}}" alt="country flag" class="flag">
+        </td>
+        <td>{{country.name}}</td>
+        <td>{{country.population}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

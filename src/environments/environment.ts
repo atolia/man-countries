@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: 'https://restcountries.eu/rest/v2',
+  googleMapsApiKey: 'AIzaSyACsrspzJiIfLVQVq7nF_NVGUXnbG9_Fpw'
 };
 
 /*

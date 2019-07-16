@@ -1,0 +1,8 @@
+@import "variables";
+@import "mixins";
+
+input {
+  @include input-height(40px);
+  padding-left: 12px;
+  margin-bottom: 20px;
+}

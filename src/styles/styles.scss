@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+@import "variables";
+@import "mixins";
+@import "table";
+
+body {
+  font: $man-font;
+  font-weight: $man-font-weight;
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: $white-color;
+  cursor: pointer;
+
+  &[disabled] {
+    background-color: $grey-color !important;
+  }
+}
+
+input {
+  background: $white-color;
+  box-shadow: inset 3px 2px 9px rgba(0, 0, 0, 0.14);
+  border-width: 0;
+  font-size: 16px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+.content-wrapper {
+  padding: 20px;
+  margin: 0;
+}
+
+.sort-icon {
+  cursor: pointer;
+  user-select: none;
+  color: $blue-color;
+
+  &.disabled {
+    color: $grey-visible-color;
+  }
+}
