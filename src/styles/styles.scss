@@ -41,3 +41,12 @@ input {
 .details-content {
   padding: 20px;
 }
+
+.sort-icon {
+  cursor: pointer;
+  user-select: none;
+
+  &.disabled {
+    color: $grey-visible-color;
+  }
+}

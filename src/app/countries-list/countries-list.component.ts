@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 
 import { CountriesListService } from '../services/api/countries-list/countries-list.service';
 import { SearchService } from '../services/search/search.service';
-import { Country } from '../../models';
+import { Country, Sorting } from '../../models';
 
 @Component({
   selector: 'man-countries-list',
@@ -13,6 +13,8 @@ import { Country } from '../../models';
 export class CountriesListComponent implements OnInit {
 
   countries$: Observable<Country[]>;
+  sortPopulationOrder: Sorting;
+  sortNamesOrder: Sorting;
 
   constructor(private countriesListService: CountriesListService, public searchService: SearchService) { }
 
@@ -22,6 +24,14 @@ export class CountriesListComponent implements OnInit {
 
   getCountriesList() {
     return this.countriesListService.getAllCountries();
+  }
+
+  sortPopulation() {
+    this.sortPopulationOrder = this.sortPopulationOrder === 'asc' ? 'desc' : 'asc';
+  }
+
+  sortNames() {
+    this.sortNamesOrder = this.sortNamesOrder === 'asc' ? 'desc' : 'asc';
   }
 
 }
