@@ -5,28 +5,12 @@
   @include flag-size(40px)
 }
 
-.country-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid black;
-
-  &:nth-child(odd) {
-    background-color: $grey-color;
+td, th {
+  &.count-ceil {
+    width: 50px
   }
-}
 
-.count {
-  width: 20px;
-  height: 20px;
-  border: 1px solid black;
-  border-radius: 50%;
-}
-
-.country-name {
-  width: 200px;
-}
-
-.country-population {
-  width: 100px;
+  &.flag-ceil {
+    width: 70px
+  }
 }

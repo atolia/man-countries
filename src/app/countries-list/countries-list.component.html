@@ -1,9 +1,22 @@
-<div *ngIf="(countries$ | async) as countries">
-  <div *ngFor="let country of countries | searchByName:(searchService.searchTerms$ | async); let i = index" class="country-row" [routerLink]="['/country', country.name]">
-    <span class="count">{{i+1}}</span>
-    <span><img src="{{country.flag}}" alt="country flag" class="flag"></span>
-    <span class="country-name">{{country.name}}</span>
-    <span class="country-population">{{country.population}}</span>
-  </div>
+<div *ngIf="(countries$ | async) as countries" class="content-wrapper">
+  <table>
+    <thead>
+      <th class="count-ceil">Count</th>
+      <th class="flag-ceil">Flag</th>
+      <th>Name</th>
+      <th>Population</th>
+    </thead>
+
+    <tbody *ngFor="let country of countries | searchByName:(searchService.searchTerms$ | async); let i = index" [routerLink]="['/country', country.name]">
+      <tr>
+        <td class="count-ceil">{{i+1}}</td>
+        <td class="flag-ceil">
+          <img src="{{country.flag}}" alt="country flag" class="flag">
+        </td>
+        <td>{{country.name}}</td>
+        <td>{{country.population}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
