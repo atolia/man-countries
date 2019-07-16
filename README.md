@@ -1,3 +1,11 @@
+[APP IS HERE](https://man-energy-solutions.herokuapp.com/)
+### TASK SUMMARY
+1. App was created with the help of framework Angular8.
+2. In this app user can fetch all countries, sort them, search by country name, go to descriptions page.
+3. On description page user can find some country description and facts and also google maps with this country.
+4. Unit tests are written and passed successfully.
+7. Additionally app was deployed on Heroku [deployed app](https://man-energy-solutions.herokuapp.com/)
+
 # ManCountries
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
