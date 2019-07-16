@@ -8,8 +8,8 @@ import { CountriesListComponent } from './countries-list/countries-list.componen
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CountryDetailsComponent } from './country-details/country-details.component';
 import { SearchFieldComponent } from './search-field/search-field.component';
-import { SearchByNamePipe } from './pipes/search-by-name/search-by-name.pipe';
 import { CountriesPageComponent } from './countries-page/countries-page.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,12 +18,12 @@ import { CountriesPageComponent } from './countries-page/countries-page.componen
     PageNotFoundComponent,
     CountryDetailsComponent,
     SearchFieldComponent,
-    SearchByNamePipe,
     CountriesPageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    SharedModule,
     AppRoutingModule
   ],
   providers: [],

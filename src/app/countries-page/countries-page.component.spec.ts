@@ -5,7 +5,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CountriesPageComponent } from './countries-page.component';
 import { CountriesListComponent } from '../countries-list/countries-list.component';
 import { SearchFieldComponent } from '../search-field/search-field.component';
-import { SearchByNamePipe } from '../pipes/search-by-name/search-by-name.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 describe('CountriesPageComponent', () => {
   let component: CountriesPageComponent;
@@ -13,8 +13,8 @@ describe('CountriesPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountriesPageComponent, CountriesListComponent, SearchFieldComponent, SearchByNamePipe ],
-      imports: [ HttpClientTestingModule, RouterTestingModule ]
+      declarations: [ CountriesPageComponent, CountriesListComponent, SearchFieldComponent ],
+      imports: [ HttpClientTestingModule, RouterTestingModule, SharedModule ]
     })
     .compileComponents();
   }));

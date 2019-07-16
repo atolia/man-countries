@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Country } from '../../../models';
+import { Country } from '../../../../models';
 
 @Pipe({
   name: 'searchByName'
