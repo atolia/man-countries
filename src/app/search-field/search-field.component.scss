@@ -1,8 +1,8 @@
 @import "variables";
+@import "mixins";
 
 input {
-  border-radius: 40px;
+  @include input-height(40px);
   padding-left: 12px;
-  height: 42px;
   margin: 20px;
 }

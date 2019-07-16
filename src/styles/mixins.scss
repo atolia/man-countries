@@ -5,3 +5,8 @@
   max-width: $size;
   max-height: $size;
 }
+
+@mixin input-height($size){
+  border-radius: $size;
+  height: $size;
+}
