@@ -31,11 +31,8 @@ export class CountryDetailsComponent implements OnInit {
       map((details: Country[]) => details[0])
     );
 
-    this.countryDetails$.subscribe((details: any) => {
-      console.log(details);
-      const [lat, lng] = details.latlng;
-
-      this.initMap(lat, lng);
+    this.countryDetails$.subscribe((countryDetails: Country) => {
+      this.initMap(countryDetails.latlng);
     });
   }
 
@@ -43,8 +40,7 @@ export class CountryDetailsComponent implements OnInit {
     this.location.back();
   }
 
-  private initMap(lat, lng) {
-    console.log(lat, lng);
+  private initMap([lat, lng]: any) {
     const mapProperties = {
       center: new google.maps.LatLng(lat, lng),
       zoom: 5,
